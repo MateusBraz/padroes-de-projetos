@@ -11,9 +11,6 @@ public class NotaFiscalBuilder {
 
 	private NotaFiscal notaFiscal;
 
-	public NotaFiscalBuilder() {
-	}
-
 	public NotaFiscalBuilder notaFiscalPessoaFisicaBuild() {
 		this.notaFiscal = new NotaFiscalPessoaFisica();
 		return this;
@@ -31,10 +28,10 @@ public class NotaFiscalBuilder {
 
 	private Date converterStringEmDate(String date) {
 		try {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			return dateFormat.parse(date);
 		} catch (ParseException e) {
-			throw new IllegalArgumentException("Não foi possível converter a data espcificada");
+			throw new IllegalArgumentException("Não foi possível converter a data especificada");
 		}
 	}
 
